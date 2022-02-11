@@ -1,0 +1,79 @@
+.containerSystems {
+  background-color: var(--primary-color);
+
+  div {
+    width: 100%;
+    height: 37px;
+  }
+
+  .styledBorderStart {
+    border-radius: 0 0 100% 100%;
+    background-color: var(--white);
+  }
+
+  .styledBorderEnd {
+    border-radius: 100% 100% 0 0;
+    background-color: var(--white);
+  }
+
+  .systems {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 5rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    header {
+      padding: 2.1rem 0;
+      h2 {
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 3.1rem;
+        color: var(--white);
+        strong {
+          color: var(--secondary-color);
+        }
+      }
+    }
+
+    .systemsBackground {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: url('../../../../public//assets/background_systems.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+
+      div {
+        max-width: 972px;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+ 
+        section {
+          h3 {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 2rem;
+            padding-bottom: 1.3rem;
+            color: var(--secondary-color);
+          }
+
+          p {
+            font-size: 1.2rem;
+            font-style: normal;
+            font-weight: normal;
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+}
