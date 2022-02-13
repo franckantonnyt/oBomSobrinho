@@ -47,25 +47,11 @@
     }
   }
 
-  .containerImages {
-    width: 50%;
-    height: 100%;
-    padding-top: 80px;
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-      url('../../../../public//assets/icons/logo-o-bom-sobrinho.png');
-    background-repeat: no-repeat;
-    mix-blend-mode: multiply;
-    background-position: 100% 0%;
-
-    .backgroundImage {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: url('../../../../public//assets/featured-image.png');
-      background-repeat: no-repeat;
-      background-size: 100%;
-    }
+  .containerForm {
+    padding: 40px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
   }
 }

@@ -1,17 +1,19 @@
 import styles from './styles.module.scss';
 
+import Form from '../Form';
+
 const StartPage = () => {
   return (
     <section className={styles.startPage}>
       <div className={styles.containerTitleButton}>
-        <h1>Simplificamos a Emissão de suas Notas Fiscais!</h1>
+        <h1>Aumente suas vendas na internet com nossa solução de marketing integrado.</h1>
         <p>
-          Tenha todos os controles essenciais do seu negócio em um único lugar.
+          Cadastre seus dados e receba uma CONSULTORIA GRATUITA focada em trazer mais clientes qualificados com a internet e aumentar as vendas do seu negócio!
         </p>
-        <button>Faça seu orçamento</button>
+        <span>Nossa missão é ajudar seu negócio a vender mais!</span>
       </div>
-      <div className={styles.containerImages}>
-        <div className={styles.backgroundImage} />
+      <div className={styles.containerForm}>
+        <Form />
       </div>
     </section>
   );
