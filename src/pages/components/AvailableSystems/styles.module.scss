@@ -1,77 +1,73 @@
 .containerSystems {
-  background-color: var(--primary-color);
+  .containerBackground,
+  .systems {
+    padding: 0 calc(100% - 1400px) 0;
+  }
 
-  div {
+  .containerBackground {
     width: 100%;
-    height: 37px;
-  }
-
-  .styledBorderStart {
-    border-radius: 0 0 100% 100%;
-    background-color: var(--white);
-  }
-
-  .styledBorderEnd {
-    border-radius: 100% 100% 0 0;
-    background-color: var(--white);
+    height: 150px;
+    background-image: url("../../../../public//assets/background_waves.svg");
+    background-size: 100%;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
   }
 
   .systems {
     width: 100%;
     height: 100%;
     display: flex;
-    padding: 0 5rem;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    padding-bottom: 2rem;
+    background-color: var(--quinary-color);
 
     header {
       padding: 2.1rem 0;
+      text-align: center;
       h2 {
         font-family: Roboto;
         font-weight: 500;
         font-size: 3.1rem;
         color: var(--white);
         strong {
-          color: var(--secondary-color);
+          padding: 0 8px;
+          color: var(--quinary-color);
+          background-color: var(--white);
         }
       }
     }
 
     .systemsBackground {
       width: 100%;
-      height: 100%;
+      height: 500px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: url('../../../../public//assets/background_systems.svg');
-      background-repeat: no-repeat;
-      background-size: 100%;
+      justify-content: space-between;
 
-      div {
-        max-width: 972px;
-        height: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
- 
-        section {
-          h3 {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 2rem;
-            padding-bottom: 1.3rem;
-            color: var(--secondary-color);
-          }
+      section {
+        width: 50%;
+        height: 100%;
 
-          p {
-            font-size: 1.2rem;
-            font-style: normal;
-            font-weight: normal;
-            color: var(--white);
-          }
+        img {
+          max-height: 100%;
+        }
+
+        h3 {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 2rem;
+          padding-bottom: 1.3rem;
+          color: var(--secondary-color);
+        }
+
+        p {
+          font-size: 1.2rem;
+          font-style: normal;
+          font-weight: normal;
+          color: var(--white);
         }
       }
     }

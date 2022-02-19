@@ -1,71 +1,76 @@
 .startPage {
+  gap: 45px;
   height: 850px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    180deg,
-    rgba(232, 102, 40, 0.15) 0%,
-    rgba(229, 239, 255, 0.262661) 83.7%,
-    rgba(229, 239, 255, 0) 100%
-  );
+  padding: 12rem calc(100% - 1400px) 0;
+  background: linear-gradient(120deg, #8c2ce7 0%, #600fce 30%, #4f03c5 50%, #4448d0 85%, #4467d4 100%);
 
   .containerTitleButton {
     width: 50%;
     height: 100%;
-    padding-top: 13rem;
-    padding-left: 4.5rem;
     h1 {
-      font-weight: 700;
-      font-size: 5.3rem;
+      font-size: 8rem;
+      color: white;
+      line-height: 1;
+      font-weight: 900;
+      margin-bottom: 1rem;
     }
 
     p {
-      padding: 0.5rem 0 2rem;
+      color: white;
+      font-weight: 300;
+      font-size: 1.2rem;
+
+      b {
+        font-weight: 500;
+        font-size: 1.3rem;
+        padding: 2px 5px;
+        background-color: white;
+        color: var(--tertiary-color);
+      }
     }
 
     button {
       border: none;
-      border-radius: 60px;
-      padding: 1.62rem 3.25rem;
-      background: var(--primary-color);
-
-      font-size: 18px;
-      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+      font-size: 1.5rem;
+      padding: 12px 24px;
       font-weight: 500;
-      line-height: 21px;
-      font-style: normal;
-      text-align: center;
+      margin-top: 2.5rem;
+      border-radius: 8px;
       font-family: Roboto;
-      color: var(--white);
-      transition: 0.2s;
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.24);
+      background: white;
+      color: var(--tertiary-color);
+      box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.24);
 
       &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
       }
     }
   }
 
-  .containerImages {
+  .containerForm {
     width: 50%;
     height: 100%;
-    padding-top: 80px;
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-      url('../../../../public//assets/icons/logo-o-bom-sobrinho.png');
-    background-repeat: no-repeat;
-    mix-blend-mode: multiply;
-    background-position: 100% 0%;
+    display: flex;
+    text-align: start;
+    align-items: flex-start;
 
-    .backgroundImage {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: url('../../../../public//assets/featured-image.png');
-      background-repeat: no-repeat;
-      background-size: 100%;
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+      z-index: 2;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 55%;
+      z-index: 1;
     }
   }
 }

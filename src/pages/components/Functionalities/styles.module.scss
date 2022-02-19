@@ -3,18 +3,25 @@
   text-align: center;
   align-items: flex-start;
   justify-content: center;
+  padding: 3.7rem calc(100% - 1400px) 0;
   header {
     padding: 1rem 0 2rem;
     h1 {
       font-family: Roboto;
       font-style: normal;
       font-weight: bold;
-      font-size: 3.1rem;
+      font-size: 3rem;
+
+      b {
+        padding: 0 8px;
+        color: var(--white);
+        background-color: var(--secondary-color);
+      }
     }
 
     h3 {
       padding-top: 0.5rem;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-style: normal;
       font-weight: lighter;
 
@@ -34,8 +41,8 @@
   }
 
   .cardFunctionality {
-    height: 37rem;
-    padding: 3.5rem;
+    height: 30rem;
+    padding: 2.8rem;
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -47,23 +54,25 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 500;
-      padding: 1rem 0 0.5rem;
+      padding: 1rem 0 1rem;
       font-style: normal;
       font-family: Roboto;
+      color: var(--quinary-color);
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-style: normal;
       font-weight: 300;
       font-family: Roboto;
+      text-align: left;
     }
 
     .cardImage {
       width: 100%;
-      height: 55%;
+      height: 30%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -71,7 +80,8 @@
         width: 100%;
         height: 100%;
         filter: none;
-        path {
+        path,
+        rect {
           fill: var(--gray-color);
         }
       }
@@ -79,7 +89,7 @@
 
     .cardFooter {
       width: 100%;
-      height: 45%;
+      height: 70%;
     }
 
     &:hover {
@@ -87,8 +97,9 @@
       box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
 
       svg {
-        path {
-          fill: var(--primary-color);
+        path,
+        rect {
+          fill: var(--quinary-color);
         }
       }
     }
