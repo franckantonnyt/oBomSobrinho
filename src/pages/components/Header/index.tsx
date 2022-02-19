@@ -26,7 +26,7 @@ const Header = ({ toggle }) => {
     <div className={styles.headerContainer}>
       <header className={navBarColor ? styles.isActive : ''}>
         <img
-          src='assets/icons/logo-o-bom-sobrinho.png'
+          src='assets/icons/logo-o-bom-sobrinho-marca-dagua.png'
           alt='Logo'
           onClick={() => scroll.scrollToTop()}
         />

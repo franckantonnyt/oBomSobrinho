@@ -2,9 +2,12 @@ import { carrouselFunctionalities } from '../../../constants/carrouselData';
 
 import Carrousel from '../Carrousel';
 
-import FinancialControlIcon from '../../../../public/assets/icons/financial_control.svg';
-import BudgetAndSalesIcon from '../../../../public/assets/icons/budget_and_sales.svg';
-import InventoryControl from '../../../../public/assets/icons/inventory_control.svg';
+import ReachBuyers from '../../../../public/assets/icons/reach_buyers.svg';
+import CompanyOnTheInternt from '../../../../public/assets/icons/company_on_the_internt.svg';
+import SalesAndLoyalty from '../../../../public/assets/icons/sales_and_loyalty.svg';
+import TargetedReach from '../../../../public/assets/icons/targeted_reach.svg';
+import IncreaseYourSales from '../../../../public/assets/icons/increase_your_sales.svg';
+import SmartGrowth from '../../../../public/assets/icons/smart_growth.svg';
 
 import styles from './styles.module.scss';
 
@@ -17,9 +20,12 @@ const carrouselComponent = (carrouselFunctionalities) => {
       <li key={index}>
         <div className={styles.cardFunctionality}>
           <div className={styles.cardImage}>
-            {kind === 'financial_control' && <FinancialControlIcon />}
-            {kind === 'inventory_control' && <BudgetAndSalesIcon />}
-            {kind === 'budget_and_sales' && <InventoryControl />}
+            {kind === 'reach_buyers' && <ReachBuyers />}
+            {kind === 'company_on_the_internt' && <CompanyOnTheInternt />}
+            {kind === 'sales_and_loyalty' && <SalesAndLoyalty />}
+            {kind === 'targeted_reach' && <TargetedReach />}
+            {kind === 'increase_your_sales' && <IncreaseYourSales />}
+            {kind === 'smart_growth' && <SmartGrowth />}
           </div>
           <div className={styles.cardFooter}>
             <h2>{title}</h2>
@@ -41,11 +47,9 @@ const Functionalities = () => {
   return (
     <section className={styles.containerFunctionalities} id='/funcionalidade'>
       <header>
-        <h1>Desenvolvido para você!</h1>
+        <h1><b>O Bom Sobrinho</b> propõe um serviço diferente</h1>
         <h3>
-          Nossas <strong>soluções</strong> são adequadas para{' '}
-          <strong>atender</strong> as necessidades de sua{' '}
-          <strong>empresa.</strong>
+          Nossa <strong>metodologia</strong> foi feita para entender o seu negócio e desenhar <br /> as <strong>melhores estratégias</strong> para você vender mais.
         </h3>
       </header>
       <Carrousel arrayList={carrouselComponent(carrouselFunctionalities)} />
