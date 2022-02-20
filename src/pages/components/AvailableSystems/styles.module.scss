@@ -13,6 +13,15 @@
     background-repeat: no-repeat;
   }
 
+  .containerBackgroundBottom {
+    width: 100%;
+    height: 150px;
+    background-image: url("../../../../public//assets/background_waves_bottom.svg");
+    background-size: 100%;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+  }
+
   .systems {
     width: 100%;
     height: 100%;
@@ -20,7 +29,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 2rem;
     background-color: var(--quinary-color);
 
     header {
@@ -50,6 +58,10 @@
       section {
         width: 50%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
 
         img {
           max-height: 100%;
@@ -60,11 +72,12 @@
           font-style: normal;
           font-weight: bold;
           font-size: 2rem;
+          color: var(--white);
           padding-bottom: 1.3rem;
-          color: var(--secondary-color);
         }
 
         p {
+          max-width: 500px;
           font-size: 1.2rem;
           font-style: normal;
           font-weight: normal;

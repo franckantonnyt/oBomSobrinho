@@ -1,100 +1,77 @@
 .containerContact {
   width: 100%;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
+  padding: 2rem 0 0;
 
-  header {
-    padding: 4rem 0 3rem;
-    h1 {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 3.1rem;
+  .containerForm {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 calc(100% - 1400px) 0;
+
+    section:nth-child(1) {
+      width: 55%;
     }
 
-    h3 {
-      max-width: 73rem;
-      padding-top: 0.5rem;
-      font-size: 1.8rem;
-      font-style: normal;
-      font-weight: lighter;
+    section:nth-child(2) {
+      width: 45%;
+    }
 
-      strong {
+    section {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      header {
+        padding: 2.1rem 0;
+
+        h1 {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 3.1rem;
+
+          b {
+            padding: 0 8px;
+            color: var(--white);
+            background-color: var(--primary-color);
+          }
+        }
+      }
+
+      p {
+        max-width: 700px;
+        font-size: 1.2rem;
+        font-style: normal;
         font-weight: normal;
+        margin-bottom: 0.9rem;
+        color: var(--gray-color);
+
+        b {
+          color: var(--primary-color);
+        }
+
+        strong {
+          padding: 0 8px;
+          color: var(--white);
+          background-color: var(--primary-color);
+        }
       }
     }
   }
 
-  .bodyContact {
+  .containerFooter {
     width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    background: url('../../../../public//assets/background_contact.svg');
-    background-repeat: no-repeat;
-    background-size: 90%;
-    background-position: 50% 0%;
+    padding: 3rem 0 .8rem;
+    text-align: center;
+    background-color: #f7f7f7;
 
-    .cardContact {
-      width: 100%;
-      display: flex;
-      padding-bottom: 1.5rem;
-      justify-content: center;
-
-      ul {
-        width: 85%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .card {
-          width: 25%;
-          height: 13rem;
-          margin: 0 2rem;
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          justify-content: center;
-          border-radius: 20px;
-          background: var(--white);
-          box-shadow: 5px 5px 44px rgba(12, 10, 62, 0.25);
-
-          h3 {
-            font-family: Roboto;
-            font-weight: 500;
-            font-size: 1.8rem;
-            text-align: center;
-            font-style: normal;
-            padding-bottom: 1rem;
-            color: var(--secondary-color);
-          }
-
-          div {
-            display: flex;
-            align-items: center;
-            svg {
-              height: 2rem;
-              margin-right: 0.5rem;
-            }
-            p {
-              font-family: Roboto;
-              font-weight: 300;
-              font-size: 1.8rem;
-              color: var(--secondary-color);
-            }
-          }
-        }
-      }
-    }
-
-    .detailsContact {
-      width: 100%;
-      height: 10rem;
-      background-color: var(--secondary-color);
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      color: var(--gray-color);
     }
   }
 }

@@ -15,7 +15,7 @@ const AvailableSystems = () => {
             <img src="assets/images/marketing-integrado.png" alt="background" />
           </section>
           <section>
-            <h3>CRESCER DO JEITO CERTO</h3>
+            <h3>Crescer do jeito certo</h3>
             <p>
               Com o domínio das redes sociais sobre o comportamento dos usuários da internet o cenário do marketing mudou, ficou mais barato e centenas de milhares de empresas estão anunciando para seus clientes.
             </p>
@@ -31,6 +31,7 @@ const AvailableSystems = () => {
           </section>
         </div>
       </div>
+      <div className={styles.containerBackgroundBottom} />
     </section>
   );
 };

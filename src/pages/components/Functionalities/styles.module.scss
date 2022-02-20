@@ -12,6 +12,8 @@
       font-weight: bold;
       font-size: 3rem;
 
+      padding-bottom: .5rem;
+
       b {
         padding: 0 8px;
         color: var(--white);
@@ -33,7 +35,7 @@
 
   li {
     width: 32%;
-    height: 40rem;
+    height: 32rem;
     display: flex;
     margin: 0 2rem;
     align-items: center;
