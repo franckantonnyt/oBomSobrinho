@@ -52,6 +52,7 @@
 
     @media (max-width: 768px) {
       height: 10%;
+      padding: 8px;
 
       .menuBarMobile {
         width: 50%;
@@ -64,8 +65,8 @@
           width: auto;
           height: 100%;
           cursor: pointer;
-          fill: var(--secondary-color);
-          stroke: var(--secondary-color);
+          fill: var(--white);
+          stroke: var(--white);
           transform: scaleX(-1);
         }
       }

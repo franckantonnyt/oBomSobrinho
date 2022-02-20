@@ -7,6 +7,11 @@
   padding: 12rem calc(100% - 1400px) 0;
   background: linear-gradient(120deg, #8c2ce7 0%, #600fce 30%, #4f03c5 50%, #4448d0 85%, #4467d4 100%);
 
+  @media (max-width: 769px) {
+    padding: 6rem 1rem 2rem;
+    height: auto;
+  }
+
   .containerTitleButton {
     width: 50%;
     height: 100%;
@@ -50,27 +55,58 @@
         opacity: 0.9;
       }
     }
+
+    @media (max-width: 769px) {
+      width: 100%;
+      text-align: center;
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        line-height: 1.5;
+  
+        b {
+          font-weight: 500;
+          font-size: 1.5rem;
+          padding: 2px 10px;
+          background-color: white;
+          color: var(--tertiary-color);
+        }
+      }
+
+      button {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+      }
+    }
   }
 
-  .containerForm {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    text-align: start;
-    align-items: flex-start;
+  .containerBackground {
+    display: none;
+    @media (min-width: 769px) {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      text-align: start;
+      align-items: flex-start;
 
-    svg {
-      max-width: 100%;
-      max-height: 100%;
-      z-index: 2;
-    }
+      svg {
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 2;
+      }
 
-    img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 55%;
-      z-index: 1;
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55%;
+        z-index: 1;
+      }
     }
   }
 }

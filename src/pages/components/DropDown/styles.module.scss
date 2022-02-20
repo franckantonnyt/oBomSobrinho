@@ -12,10 +12,10 @@
     align-items: center;
     justify-content: center;
     transition: 0.3s ease-in-out;
-    background: linear-gradient(160deg, var(--secondary-color) 0%, #214F4B 100%);
+    background: linear-gradient(120deg, #8c2ce7 0%, #600fce 30%, #4f03c5 50%, #4448d0 85%, #4467d4 100%);
 
     svg {
-      width: 10rem;
+      width: 5rem;
       height: auto;
       cursor: pointer;
       position: absolute;
@@ -39,7 +39,7 @@
 
       h3 {
         cursor: pointer;
-        font-size: 8rem;
+        font-size: 3rem;
         font-weight: 500;
         color: var(--white);
         transition: 0.2s ease-in-out;

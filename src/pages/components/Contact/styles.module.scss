@@ -2,6 +2,10 @@
   width: 100%;
   padding: 2rem 0 0;
 
+  @media (max-width: 769px) {
+    padding: 0;
+  }
+
   .containerForm {
     height: 600px;
     display: flex;
@@ -11,10 +15,19 @@
 
     section:nth-child(1) {
       width: 55%;
+
+      @media (max-width: 769px) {
+        width: 100%;
+        padding-bottom: 1rem;
+      }
     }
 
     section:nth-child(2) {
       width: 45%;
+
+      @media (max-width: 769px) {
+        width: 100%;
+      }
     }
 
     section {
@@ -60,11 +73,34 @@
         }
       }
     }
+
+    @media (max-width: 769px) {
+      height: auto;
+      padding: 0 1rem;
+      flex-direction: column;
+
+      section {
+        width: 100%;
+
+        header {
+          padding: 0 0 1rem;
+          text-align: center;
+
+          h1 {
+            font-size: 2rem;
+          }
+        }
+
+        p {
+          text-align: center;
+        }
+      }
+    }
   }
 
   .containerFooter {
     width: 100%;
-    padding: 3rem 0 .8rem;
+    padding: 3rem 0 0.8rem;
     text-align: center;
     background-color: #f7f7f7;
 
