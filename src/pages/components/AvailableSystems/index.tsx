@@ -12,15 +12,21 @@ const AvailableSystems = () => {
         </header>
         <div className={styles.systemsBackground}>
           <section>
-            <img src="assets/images/marketing-integrado.jpg" alt="background" />
+            <img src="assets/images/marketing-integrado.png" alt="background" />
           </section>
           <section>
-            <h3>GDOOR Sistemas</h3>
+            <h3>CRESCER DO JEITO CERTO</h3>
             <p>
-              Emissão de NF-e, NFC-e, CF-e (SAT e MFE), NFP-e, MDF-e, CT-e,
-              CT-e OS e Cupom Fiscal. Geração de arquivos fiscais (SPED,
-              Sintegra). Gestão financeira completa: contas a pagar, receber,
-              livro caixa, geração de boletos além de mais de 400 relatórios..
+              Com o domínio das redes sociais sobre o comportamento dos usuários da internet o cenário do marketing mudou, ficou mais barato e centenas de milhares de empresas estão anunciando para seus clientes.
+            </p>
+            <p>
+              Isso nos leva a uma concorrência alta pela atenção dos clientes, e por isso só fazer anúncios não trás o melhor resultado.
+            </p>
+            <p>
+              Uma solução integrada passa por todas as etapas, desde trazer a atenção dos compradores até eles se tornarem clientes e continuarem comprando.
+            </p>
+            <p>
+              E faz isso de forma consistente e consciente para você obter o máximo de resultado com o investimento certo!
             </p>
           </section>
         </div>
