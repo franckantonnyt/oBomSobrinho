@@ -5,7 +5,6 @@ import DropDown from './components/DropDown';
 import StartPage from './components/StartPage';
 import Functionalities from './components/Functionalities';
 import AvailableSystems from './components/AvailableSystems';
-import PartnersCompanies from './components/PartnersCompanies';
 import Contact from './components/Contact';
 
 import styles from './home.module.scss';
