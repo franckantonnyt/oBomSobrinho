@@ -27,7 +27,7 @@ const Carrousel = ({ arrayList }: CarrouselProps) => {
             arrayList.length === positionArray + 1 ? styles.desactiveArrow : ''
           }
           onClick={() =>
-            arrayList.length !== positionArray &&
+            arrayList.length !== positionArray + 1 &&
             setPositionArray(positionArray + 1)
           }
         />

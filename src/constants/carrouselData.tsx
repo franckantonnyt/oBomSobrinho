@@ -31,36 +31,3 @@ export const carrouselFunctionalities = [
     kind: 'sales_and_loyalty',
   },
 ];
-
-export const carrouselPartnersCompaines = [
-  {
-    id: 0,
-    title: 'amazon',
-    image: 'assets/images/amazon-logo.png',
-  },
-  {
-    id: 1,
-    title: 'coca',
-    image: 'assets/images/coca-cola_logo.png',
-  },
-  {
-    id: 2,
-    title: 'microsoft',
-    image: 'assets/images/microsoft-Logo.png',
-  },
-  {
-    id: 3,
-    title: 'coca',
-    image: 'assets/images/coca-cola_logo.png',
-  },
-  {
-    id: 4,
-    title: 'microsoft',
-    image: 'assets/images/microsoft-Logo.png',
-  },
-  {
-    id: 5,
-    title: 'amazon',
-    image: 'assets/images/amazon-logo.png',
-  },
-];

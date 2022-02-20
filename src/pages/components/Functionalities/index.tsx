@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { carrouselFunctionalities } from '../../../constants/carrouselData';
 
 import Carrousel from '../Carrousel';
@@ -11,7 +12,7 @@ import SmartGrowth from '../../../../public/assets/icons/smart_growth.svg';
 
 import styles from './styles.module.scss';
 
-const carrouselComponent = (carrouselFunctionalities) => {
+const carrouselComponent = (carrouselFunctionalities, widthPage) => {
   let objectArray = [];
   const arrayContent = [];
 
@@ -34,7 +35,7 @@ const carrouselComponent = (carrouselFunctionalities) => {
         </div>
       </li>
     );
-    if (objectArray.length === 3) {
+    if (objectArray.length === widthPage) {
       arrayContent.push(objectArray);
       objectArray = [];
     }
@@ -44,6 +45,14 @@ const carrouselComponent = (carrouselFunctionalities) => {
 };
 
 const Functionalities = () => {
+  const [widthPage, setWidthPage] = useState(3);
+
+  useEffect(() => {
+    if (window) {
+      window.innerWidth < 770 && setWidthPage(1);
+    }
+  });
+
   return (
     <section className={styles.containerFunctionalities} id='/funcionalidade'>
       <header>
@@ -52,7 +61,7 @@ const Functionalities = () => {
           Nossa <strong>metodologia</strong> foi feita para entender o seu negócio e desenhar <br /> as <strong>melhores estratégias</strong> para você vender mais.
         </h3>
       </header>
-      <Carrousel arrayList={carrouselComponent(carrouselFunctionalities)} />
+      <Carrousel arrayList={carrouselComponent(carrouselFunctionalities, widthPage)} />
     </section>
   );
 };

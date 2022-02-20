@@ -24,7 +24,6 @@ const Home = () => {
       <StartPage />
       <Functionalities />
       <AvailableSystems />
-      <PartnersCompanies />
       <Contact />
     </div>
   );

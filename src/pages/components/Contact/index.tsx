@@ -1,38 +1,38 @@
-import { IoLogoWhatsapp } from 'react-icons/io';
-
-import { contactData } from '../../../constants/contactData';
-
 import styles from './styles.module.scss';
+
+import Form from '../Form';
 
 const Contact = () => {
   return (
     <section className={styles.containerContact} id='/contato'>
-      <header>
-        <h1>Contato</h1>
-        <h3>
-          Precisa de <strong>ajuda</strong> ou quer esclarecer algum assunto?
-          Entre em <strong>contato</strong> agora mesmo que resolveremos tudo
-          com <strong>você.</strong>
-        </h3>
-      </header>
-      <div className={styles.bodyContact}>
-        <div className={styles.cardContact}>
-          <ul>
-            {contactData.map(({ id, title, kind, content }) => {
-              return (
-                <li key={id} className={styles.card}>
-                  <h3>{title}</h3>
-                  <div>
-                    {kind === 'whatsapp' && <IoLogoWhatsapp />}
-                    <p>{content}</p>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className={styles.detailsContact}>teste</div>
+      <div className={styles.containerForm}>
+        <section>
+          <header>
+            <h1>Receba nossa consultoria <b>gratuita</b> <br />e comece a vender mais na internet !</h1>
+          </header>
+          <p>
+            Se você não tem uma solução de marketing integrada, de qualquer forma, você está <b>perdendo</b> vendas para seus <b>concorrentes</b> !
+          </p>
+          <p>
+            Quando você tem uma solução integrada, cada peça é feita com o objetivo correto para <b>aumentar suas vendas</b>, atrair mais clientes, tornar seu negócio uma <b>referência</b> no mercado.
+          </p>
+          <p>
+            Converse com nossos <b>especialistas</b> e descubra tudo que precisa para ter seu negócio alcançando todos os seus potenciais clientes com o poder das <b>redes e estratégias digitais</b>.
+          </p>
+          <p>
+            Cadastre seus dados e receba uma <strong>CONSULTORIA GRATUITA</strong> focada em trazer mais clientes qualificados com a internet e aumentar as vendas do seu negócio!
+          </p>
+        </section>
+        <section><Form /></section>
       </div>
+      <footer className={styles.containerFooter}>
+        <p>
+          O Bom Sobrinho – Agência Digital © Todos os Direitos Reservados
+        </p>
+        <p>
+          Termos de Uso - Políticas de Privacidade
+        </p>
+      </footer>
     </section>
   );
 };

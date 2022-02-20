@@ -12,6 +12,8 @@
       font-weight: bold;
       font-size: 3rem;
 
+      padding-bottom: 0.5rem;
+
       b {
         padding: 0 8px;
         color: var(--white);
@@ -33,11 +35,36 @@
 
   li {
     width: 32%;
-    height: 40rem;
+    height: 32rem;
     display: flex;
     margin: 0 2rem;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 769px) {
+    padding: 2rem 1rem;
+    header {
+      padding: 0;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        padding-bottom: 1rem;
+      }
+    }
+    p {
+      text-align: center;
+    }
+
+    li {
+      width: 100%;
+      margin: 0 0.5rem;
+    }
   }
 
   .cardFunctionality {
@@ -101,6 +128,26 @@
         rect {
           fill: var(--quinary-color);
         }
+      }
+    }
+
+    @media (max-width: 769px) {
+      padding: 1rem;
+
+      header {
+        padding: 0;
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          line-height: 1.5;
+        }
+      }
+      p {
+        text-align: center;
       }
     }
   }

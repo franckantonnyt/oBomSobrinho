@@ -1,5 +1,6 @@
 .form {
     display: flex;
+    max-width: 500px;
     align-items: center;
     flex-direction: column;
 
@@ -63,6 +64,20 @@
 
         &:hover {
             opacity: 0.9;
+        }
+    }
+
+    @media (max-width: 769px) {
+        padding: 30px 20px;
+        
+        h1 {
+            font-size: 2rem;
+        }
+
+        button {
+            padding: 8px 1rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
         }
     }
 }
