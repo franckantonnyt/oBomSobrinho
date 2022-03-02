@@ -51,7 +51,7 @@
     button {
         border: none;
         color: white;
-        transition: 0.3s;
+        transition: .3s;
         font-size: 1.5rem;
         padding: 12px 24px;
         font-weight: 500;
@@ -65,11 +65,16 @@
         &:hover {
             opacity: 0.9;
         }
+    
+        &.desactive {
+            opacity: .6;
+            cursor: not-allowed;
+        }
     }
 
     @media (max-width: 769px) {
         padding: 30px 20px;
-        
+
         h1 {
             font-size: 2rem;
         }
