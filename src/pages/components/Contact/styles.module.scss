@@ -70,6 +70,19 @@
           max-width: 40px;
           margin-left: 5px;
         }
+
+        @media (max-width: 769px) {
+          padding: 1.8rem 2rem;
+
+          h1 {
+            font-size: 2rem;
+          }
+
+          p {
+            max-width: 300px;
+            font-size: 1rem;
+          }
+        }
       }
     }
 

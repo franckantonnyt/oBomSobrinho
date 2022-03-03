@@ -10,12 +10,12 @@ const Form = ({ clickButton }) => {
     const sendEmail = (e) => {
         e.preventDefault();
         setSendForm(true);
-        emailjs.sendForm('gmailMessage', 'template_2o1veye', form.current, 'user_gIl675C0HvKoRsyaMH4kO')
-            .then((result) => {
-                console.log(result);
-            }, (error) => {
-                console.log(error);
-            });
+        // emailjs.sendForm('gmailMessage', 'template_2o1veye', form.current, 'user_gIl675C0HvKoRsyaMH4kO')
+        //     .then((result) => {
+        //         console.log(result);
+        //     }, (error) => {
+        //         console.log(error);
+        //     });
         setTimeout(() => {
             setSendForm(false);
             clickButton(!sendForm);
