@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="facebook-domain-verification" content="nb0ijizladl5ynddwrenxsdu4fmu29" />
           {/* <!-- Google Tag Manager --> */}
           <script type="text/javascript" dangerouslySetInnerHTML={{
             __html: `(function (w, d, s, l, i) {
