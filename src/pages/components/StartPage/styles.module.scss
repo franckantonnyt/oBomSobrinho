@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12rem calc(100% - 1400px) 0;
+  padding: 12rem 13% 0;
   background: linear-gradient(120deg, #8c2ce7 0%, #600fce 30%, #4f03c5 50%, #4448d0 85%, #4467d4 100%);
 
   @media (max-width: 769px) {
@@ -106,6 +106,8 @@
         right: 0;
         width: 55%;
         z-index: 1;
+        max-width: 960px;
+        max-height: 870px;
       }
     }
   }
