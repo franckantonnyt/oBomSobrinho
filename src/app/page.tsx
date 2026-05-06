@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { MobileScrollWhatsAppFab } from "@/components/layout/MobileScrollWhatsAppFab";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Authority } from "@/components/sections/Authority";
@@ -13,6 +14,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
+      <MobileScrollWhatsAppFab />
       <main id="main">
         <Hero />
         <Authority />

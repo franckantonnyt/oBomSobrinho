@@ -11,16 +11,16 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate overflow-hidden pb-32 pt-12 sm:pt-20 lg:pb-40 lg:pt-24"
+      className="relative isolate overflow-hidden pb-24 pt-10 sm:pb-32 sm:pt-20 lg:pb-40 lg:pt-24"
     >
       <MeshBackground />
 
       <div className="container-page relative">
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-start lg:gap-16">
-          <div className="max-w-none">
+        <div className="grid min-w-0 items-center gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-start lg:gap-16">
+          <div className="min-w-0 max-w-none">
             {/* Eyebrow */}
             <span
-              className="hero-item inline-flex items-center gap-2 rounded-full border border-border-strong bg-white/[0.04] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-fg-muted backdrop-blur-sm"
+              className="hero-item inline-flex max-w-full items-center gap-2 rounded-full border border-border-strong bg-white/[0.04] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-fg-muted backdrop-blur-sm sm:px-3.5 sm:text-[11px] sm:tracking-[0.2em]"
               style={{ animationDelay: "0ms" }}
             >
               <Sparkles className="size-3.5 text-accent" aria-hidden />
@@ -31,12 +31,12 @@ export function Hero() {
             <HeroHeadline
               titleLead={hero.titleLead}
               titleAccents={hero.titleAccents}
-              className="mt-8 font-display text-[36px] uppercase leading-[1.04] text-white sm:text-[58px] lg:text-[70px]"
+              className="mt-5 font-display text-[1.6875rem] uppercase leading-[1.08] text-white sm:mt-8 sm:text-[2.625rem] sm:leading-[1.04] md:text-[52px] lg:text-[70px]"
             />
 
             {/* Subtitle */}
             <p
-              className="hero-item mt-5 max-w-xl text-lg leading-relaxed text-fg-muted sm:text-xl"
+              className="hero-item mt-4 max-w-xl text-[0.9375rem] leading-relaxed text-fg-muted sm:mt-5 sm:text-lg md:text-xl"
               style={{ animationDelay: "180ms" }}
             >
               {hero.subtitle}
@@ -44,17 +44,17 @@ export function Hero() {
 
             {/* Pain points */}
             <div
-              className="hero-item mt-9 max-w-xl rounded-2xl border-l-2 border-accent bg-white/[0.025] py-4 pl-5 pr-4"
+              className="hero-item mt-7 max-w-xl rounded-xl border-l-2 border-accent bg-white/[0.025] py-3.5 pl-4 pr-3 sm:mt-9 sm:rounded-2xl sm:py-4 sm:pl-5 sm:pr-4"
               style={{ animationDelay: "270ms" }}
             >
-              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent sm:text-[12px]">
                 {hero.painLead}
               </p>
               <ul className="mt-3 space-y-2">
                 {hero.painPoints.map((p) => (
                   <li
                     key={p}
-                    className="flex items-start gap-2.5 text-[14.5px] leading-snug text-fg-muted"
+                    className="flex items-start gap-2.5 text-[13px] leading-snug text-fg-muted sm:text-[14.5px]"
                   >
                     <span
                       aria-hidden
@@ -68,21 +68,25 @@ export function Hero() {
 
             {/* CTAs */}
             <div
-              className="hero-item mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
+              className="hero-item mt-8 flex flex-col gap-2.5 sm:mt-10 sm:flex-row sm:items-center sm:gap-3"
               style={{ animationDelay: "360ms" }}
             >
-              <MagneticButton strength={0.18}>
+              <MagneticButton
+                strength={0.18}
+                className="block w-full sm:inline-block sm:w-auto"
+              >
                 <WhatsAppButton
-                  size="xl"
+                  size="lg"
                   variant="wa"
                   message={hero.primaryMessage}
+                  className="w-full justify-center lg:px-8 lg:py-[1.125rem] lg:text-lg"
                 >
                   {hero.primaryCta}
                 </WhatsAppButton>
               </MagneticButton>
               <Link
                 href={hero.secondaryHref}
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-4 text-base font-semibold text-fg backdrop-blur-sm transition-colors hover:border-brand-400 hover:bg-white/10"
+                className="group inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-[0.9375rem] font-semibold text-fg backdrop-blur-sm transition-colors hover:border-brand-400 hover:bg-white/10 sm:w-auto sm:px-6 sm:py-3.5 sm:text-base"
               >
                 {hero.secondaryCta}
                 <ArrowRight
@@ -101,7 +105,7 @@ export function Hero() {
 
           {/* Right column — constellation + live activity panel */}
           <div
-            className="hero-item relative mx-auto w-full max-w-[520px] lg:mx-0 lg:-mt-6"
+            className="hero-item relative mx-auto min-w-0 w-full max-w-[520px] lg:mx-0 lg:-mt-6"
             style={{ animationDelay: "120ms" }}
           >
             <OperationConstellation />
@@ -160,13 +164,17 @@ export function Hero() {
               ).map(({ label, delay }) => (
                 <div
                   key={label}
-                  className="event-pill absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 whitespace-nowrap rounded-full border border-wa/30 bg-[#0a0a0f]/90 px-3 py-2 backdrop-blur-md"
-                  style={{ animationDelay: delay }}
+                  className="absolute left-1/2 top-0 -translate-x-1/2"
                 >
-                  <span className="size-1.5 rounded-full bg-wa" />
-                  <span className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-white">
-                    {label}
-                  </span>
+                  <div
+                    className="event-pill-motion flex items-center gap-1.5 whitespace-nowrap rounded-full border border-wa/30 bg-[#0a0a0f]/90 px-3 py-2 backdrop-blur-md"
+                    style={{ animationDelay: delay }}
+                  >
+                    <span className="size-1.5 rounded-full bg-wa" />
+                    <span className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-white">
+                      {label}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>

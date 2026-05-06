@@ -22,18 +22,18 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <span className="reveal mb-5 inline-flex items-center gap-2 rounded-full border border-border-strong bg-white/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] backdrop-blur-sm">
+        <span className="reveal mb-4 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-border-strong bg-white/[0.04] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] backdrop-blur-sm sm:mb-5 sm:px-3 sm:text-[11px] sm:tracking-[0.22em]">
           <span aria-hidden className="size-1.5 rounded-full bg-accent" />
           <span className="eyebrow-shimmer">{eyebrow}</span>
         </span>
       ) : null}
-      <h2 className="reveal-d1 font-display text-4xl uppercase leading-[1.04] text-white sm:text-5xl lg:text-[56px]">
+      <h2 className="reveal-d1 font-display text-[1.6875rem] uppercase leading-[1.08] text-white sm:text-4xl md:text-5xl lg:text-[56px]">
         {title}
       </h2>
       {subtitle ? (
         <p
           className={cn(
-            "reveal-d2 mt-4 text-base leading-relaxed text-fg-muted",
+            "reveal-d2 mt-3 text-[0.9375rem] leading-relaxed text-fg-muted sm:mt-4 sm:text-base md:text-lg",
             align === "center" ? "mx-auto max-w-2xl" : ""
           )}
         >

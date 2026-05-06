@@ -95,22 +95,6 @@ export function Navbar() {
           </div>
         </div>
       ) : null}
-
-      {/* Sticky mobile CTA — only on <md, visible after scroll past hero */}
-      {scrolled ? (
-        <div className="pointer-events-none fixed bottom-4 right-4 z-40 md:hidden">
-          <div className="sticky-breath pointer-events-auto wa-pulse">
-            <WhatsAppButton
-              size="md"
-              variant="wa"
-              icon
-              className="shadow-[0_18px_50px_-10px_rgba(37,211,102,0.7)]"
-            >
-              WhatsApp
-            </WhatsAppButton>
-          </div>
-        </div>
-      ) : null}
     </header>
   );
 }
