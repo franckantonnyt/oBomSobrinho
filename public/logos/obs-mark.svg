@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="obsBg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A0B3D"/>
+      <stop offset="1" stop-color="#0A0A0F"/>
+    </linearGradient>
+    <linearGradient id="obsStroke" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#6B21E8"/>
+    </linearGradient>
+    <linearGradient id="obsAccent" x1="0" y1="0" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B46F6"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer card -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#obsBg)" stroke="url(#obsStroke)" stroke-width="1.5"/>
+  <!-- Inner subtle frame -->
+  <rect x="6.5" y="6.5" width="51" height="51" rx="10.5" stroke="rgba(168,85,247,0.16)" stroke-width="1" fill="none"/>
+
+  <!-- O -->
+  <circle cx="16.5" cy="28" r="6.2" stroke="#ffffff" stroke-width="2.4" fill="none"/>
+
+  <!-- B (two bumps) -->
+  <path d="M27 21.8 H32.5 a3.6 3.6 0 0 1 0 7.2 H27 Z" stroke="#ffffff" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+  <path d="M27 27.2 H33.3 a3.6 3.6 0 0 1 0 7.2 H27 Z" stroke="#ffffff" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+
+  <!-- S -->
+  <path d="M48.4 23 a3.4 3.4 0 0 0 -3.4 -3.4 h-3 a3.4 3.4 0 0 0 0 6.8 h2.6 a3.4 3.4 0 0 1 0 6.8 h-3 a3.4 3.4 0 0 1 -3.4 -3.4"
+        stroke="#ffffff" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+
+  <!-- Accent bar (process flow) -->
+  <rect x="14" y="44" width="36" height="2" rx="1" fill="url(#obsAccent)"/>
+  <circle cx="14" cy="45" r="2.6" fill="#0A0A0F" stroke="url(#obsAccent)" stroke-width="1.4"/>
+  <circle cx="50" cy="45" r="2.6" fill="url(#obsAccent)"/>
+
+  <!-- Wordmark -->
+  <text x="32" y="55.5" font-family="'Inter', system-ui, sans-serif" font-size="6" letter-spacing="3.4" text-anchor="middle" fill="#B8B8C7" font-weight="700">SYSTEMS</text>
+</svg>
