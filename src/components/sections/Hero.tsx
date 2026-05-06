@@ -15,12 +15,12 @@ export function Hero() {
     >
       <MeshBackground />
 
-      <div className="container-page relative">
+      <div className="container-page relative mt-8">
         <div className="grid min-w-0 items-center gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-start lg:gap-16">
           <div className="min-w-0 max-w-none">
             {/* Eyebrow */}
             <span
-              className="hero-item inline-flex max-w-full items-center gap-2 rounded-full border border-border-strong bg-white/[0.04] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-fg-muted backdrop-blur-sm sm:px-3.5 sm:text-[11px] sm:tracking-[0.2em]"
+              className="hero-item z-0 inline-flex max-w-full items-center gap-2 rounded-full border border-border-strong bg-white/[0.04] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-fg-muted backdrop-blur-sm sm:px-3.5 sm:text-[11px] sm:tracking-[0.2em]"
               style={{ animationDelay: "0ms" }}
             >
               <Sparkles className="size-3.5 text-accent" aria-hidden />

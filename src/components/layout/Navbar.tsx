@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { site } from "@/content/site";
 import { cn } from "@/lib/cn";
@@ -12,7 +12,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -22,10 +22,11 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-colors duration-300",
+        "fixed inset-x-0 top-0 z-50 w-full border-b border-transparent",
+        "transition-[border-color,background-color,backdrop-filter] duration-300 ease-out motion-reduce:transition-none",
         scrolled
-          ? "border-b border-white/5 bg-bg/80 backdrop-blur-md"
-          : "bg-transparent"
+          ? "border-white/5 bg-bg/80 backdrop-blur-md backdrop-saturate-150"
+          : "bg-bg/60 [backdrop-filter:none] [-webkit-backdrop-filter:none]"
       )}
     >
       <div className="container-page flex h-16 items-center justify-between">
