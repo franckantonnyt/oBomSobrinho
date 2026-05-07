@@ -1,3 +1,6 @@
+/** Fallback público; produção pode sobrescrever via NEXT_PUBLIC_WHATSAPP_NUMBER. */
+export const defaultWhatsAppNumber = "5533984033279";
+
 export const site = {
   name: "OBS",
   longName: "O Bom Sobrinho",

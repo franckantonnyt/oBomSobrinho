@@ -1,8 +1,12 @@
+import { defaultWhatsAppNumber } from "@/content/site";
+
 const DEFAULT_MESSAGE =
   "Oi! Vim pelo site da OBS e quero automatizar meu negócio.";
 
 function getNumber(): string {
-  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
+  const fromEnv = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim();
+  if (fromEnv) return fromEnv;
+  return defaultWhatsAppNumber;
 }
 
 export function buildWhatsAppUrl(message: string = DEFAULT_MESSAGE): string {
