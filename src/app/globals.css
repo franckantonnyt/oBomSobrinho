@@ -56,7 +56,8 @@
         rgba(168, 85, 247, 0.1),
         transparent 60%
       );
-    background-attachment: fixed;
+    /* Fixed attachment is janky in Safari; keep gradient but use normal scroll. */
+    background-attachment: scroll;
   }
   ::selection {
     background-color: rgba(107, 33, 232, 0.4);
@@ -312,8 +313,17 @@
   }
 }
 
-/* Only in browsers that support scroll-driven animations */
-@supports (animation-timeline: scroll()) {
+/* Fallback: keep content visible if view-timeline is unsupported or partial. */
+@supports not (animation-timeline: view()) {
+  .reveal, .reveal-d1, .reveal-d2,
+  .reveal-pop, .reveal-pop-d1, .reveal-pop-d2, .reveal-pop-d3 {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Only in browsers that support view-timeline animations */
+@supports (animation-timeline: view()) {
   .reveal,
   .reveal-d1,
   .reveal-d2 {
@@ -475,7 +485,7 @@
   to   { stroke-dashoffset: 0; }
 }
 
-@supports (animation-timeline: scroll()) {
+@supports (animation-timeline: view()) {
   .connector-line {
     stroke-dasharray: 240;
     stroke-dashoffset: 240;
@@ -504,7 +514,7 @@
   }
 }
 
-@supports (animation-timeline: scroll()) {
+@supports (animation-timeline: view()) {
   .step-pop {
     opacity: 0;
     animation: step-pop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
@@ -540,6 +550,14 @@
   .parallax-down {
     animation: parallax-down linear both;
     animation-timeline: scroll(root);
+  }
+}
+
+/* Safari/WebKit perf guard for decorative scroll-linked effects. */
+@supports (-webkit-touch-callout: none) {
+  .parallax-up,
+  .parallax-down {
+    animation: none;
   }
 }
 

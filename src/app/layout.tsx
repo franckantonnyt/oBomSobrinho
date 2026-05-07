@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Inter } from "next/font/google";
 import { site } from "@/content/site";
-import { CursorTrail } from "@/components/visuals/CursorTrail";
 import "./globals.css";
 
 const inter = Inter({
@@ -102,7 +101,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${bebas.variable}`}>
       <body className="min-h-screen bg-bg text-fg antialiased">
-        <CursorTrail />
         {children}
         <script
           type="application/ld+json"

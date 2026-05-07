@@ -34,22 +34,25 @@ export function OperationFlow() {
               <ul className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-4 md:gap-5">
                 {operationFlow.entryChannels.map((c, i) => {
                   const Icon = c.icon;
+                  const revealClass = i === 0 ? "reveal" : i === 1 ? "reveal-d1" : "reveal-d2";
                   return (
                     <li
                       key={c.label}
-                      className={`${i === 0 ? "reveal" : i === 1 ? "reveal-d1" : "reveal-d2"} card-breathe flex min-h-[3.25rem] flex-row items-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5 sm:min-h-0 sm:justify-center sm:py-3 sm:pl-4 sm:pr-4 md:py-4`}
+                      className={revealClass}
                       style={{ animationDelay: `${i * 0.6}s` }}
                     >
-                      <span className="grid size-8 shrink-0 place-items-center rounded-lg border border-border-strong bg-gradient-to-br from-brand/30 to-accent/10 text-white">
-                        <Icon className="size-4" aria-hidden />
-                      </span>
-                      <div className="min-w-0">
-                        <p className="font-display text-[13px] uppercase tracking-wide text-white">
-                          {c.label}
-                        </p>
-                        {c.meta ? (
-                          <p className="text-[10.5px] text-fg-dim">{c.meta}</p>
-                        ) : null}
+                      <div className="card-breathe flex min-h-[3.25rem] flex-row items-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5 sm:min-h-0 sm:justify-center sm:py-3 sm:pl-4 sm:pr-4 md:py-4">
+                        <span className="grid size-8 shrink-0 place-items-center rounded-lg border border-border-strong bg-gradient-to-br from-brand/30 to-accent/10 text-white">
+                          <Icon className="size-4" aria-hidden />
+                        </span>
+                        <div className="min-w-0">
+                          <p className="font-display text-[13px] uppercase tracking-wide text-white">
+                            {c.label}
+                          </p>
+                          {c.meta ? (
+                            <p className="text-[10.5px] text-fg-dim">{c.meta}</p>
+                          ) : null}
+                        </div>
                       </div>
                     </li>
                   );
@@ -152,23 +155,26 @@ export function OperationFlow() {
               <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-4">
                 {operationFlow.destinations.map((d, i) => {
                   const Icon = d.icon;
+                  const revealClass = i % 2 === 0 ? "reveal" : "reveal-d1";
                   return (
                     <li
                       key={d.label}
-                      className={`${i % 2 === 0 ? "reveal" : "reveal-d1"} card-breathe flex min-h-[4.875rem] flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/[0.03] px-2 py-2.5 text-center sm:min-h-0 sm:gap-2 sm:px-3 sm:py-4`}
+                      className={revealClass}
                       style={{ animationDelay: `${0.3 + i * 0.6}s` }}
                     >
-                      <span className="grid size-8 shrink-0 place-items-center rounded-lg border border-border-strong bg-gradient-to-br from-brand/30 to-accent/10 text-white sm:size-9">
-                        <Icon className="size-3.5 sm:size-4" aria-hidden />
-                      </span>
-                      <p className="font-display text-[11px] uppercase leading-snug tracking-wide text-white sm:text-[13px]">
-                        {d.label}
-                      </p>
-                      {d.meta ? (
-                        <p className="text-[9.5px] leading-snug text-fg-dim sm:text-[10.5px]">
-                          {d.meta}
+                      <div className="card-breathe flex min-h-[4.875rem] flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/[0.03] px-2 py-2.5 text-center sm:min-h-0 sm:gap-2 sm:px-3 sm:py-4">
+                        <span className="grid size-8 shrink-0 place-items-center rounded-lg border border-border-strong bg-gradient-to-br from-brand/30 to-accent/10 text-white sm:size-9">
+                          <Icon className="size-3.5 sm:size-4" aria-hidden />
+                        </span>
+                        <p className="font-display text-[11px] uppercase leading-snug tracking-wide text-white sm:text-[13px]">
+                          {d.label}
                         </p>
-                      ) : null}
+                        {d.meta ? (
+                          <p className="text-[9.5px] leading-snug text-fg-dim sm:text-[10.5px]">
+                            {d.meta}
+                          </p>
+                        ) : null}
+                      </div>
                     </li>
                   );
                 })}
