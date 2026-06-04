@@ -6,7 +6,7 @@ export type Step = {
 
 export const howItWorks = {
   eyebrow: "Como entregamos",
-  title: "Da operação atual à operação inteligente — em 3 passos.",
+  title: "Da operação atual à operação inteligente, em 3 passos.",
   subtitle:
     "Sem reunião de 2 horas pra discutir tabela. Entendemos o gargalo, desenhamos a lógica, implementamos o fluxo.",
   steps: [
@@ -23,7 +23,7 @@ export const howItWorks = {
     {
       number: "03",
       title: "Implementação",
-      line: "Sistema rodando, equipe treinada, automações ligadas — sob medida.",
+      line: "Sistema rodando, equipe treinada, automações ligadas, sob medida.",
     },
   ] as Step[],
 };

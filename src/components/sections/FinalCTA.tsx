@@ -31,6 +31,7 @@ export function FinalCTA() {
                   <WhatsAppButton
                     size="xl"
                     variant="wa"
+                    message={finalCta.message}
                     className="px-10 py-5 text-lg"
                   >
                     {finalCta.cta}
@@ -38,6 +39,9 @@ export function FinalCTA() {
                 </MagneticButton>
               </span>
               <p className="text-[12.5px] text-white/70">{finalCta.ctaMicro}</p>
+              <p className="mt-1 max-w-md text-[12px] text-white/55">
+                {finalCta.scarcity}
+              </p>
             </div>
           </div>
         </div>

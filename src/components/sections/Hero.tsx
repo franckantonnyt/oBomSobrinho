@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { hero } from "@/content/hero";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -100,6 +100,18 @@ export function Hero() {
               style={{ animationDelay: "420ms" }}
             >
               {hero.primaryCtaMicro}
+            </p>
+
+            {/* Garantia / risco-zero — gatilho de conversão para PME */}
+            <p
+              className="hero-item mt-4 flex max-w-xl items-start gap-2 text-[13px] leading-snug text-fg-muted"
+              style={{ animationDelay: "480ms" }}
+            >
+              <ShieldCheck
+                className="mt-0.5 size-4 shrink-0 text-wa"
+                aria-hidden
+              />
+              <span>{hero.guarantee}</span>
             </p>
           </div>
 

@@ -27,11 +27,17 @@ export type BenefitItem = {
   label: string;
 };
 
+export type SystemStep = {
+  number: string;
+  title: string;
+  line: string;
+};
+
 export const operationFlow = {
   eyebrow: "Operação em fluxo",
   title: "Sua operação inteira, conversando entre si.",
   subtitle:
-    "Atendimento, agenda, financeiro e equipe num fluxo só — sem retrabalho, sem dependência manual, sem setor isolado.",
+    "Atendimento, agenda, financeiro e equipe num fluxo só, sem retrabalho, sem dependência manual, sem setor isolado.",
   entryChannels: [
     { icon: MessageCircle, label: "WhatsApp", meta: "Atendimento" },
     { icon: Globe, label: "Site", meta: "Formulário" },
@@ -51,6 +57,36 @@ export const operationFlow = {
     label: "Confirmação automática",
     sub: "Cliente recebe lembrete · sem ninguém precisar lembrar",
   },
+  // Os 5 passos que o sistema executa sozinho — narrativa de "o que ele faz",
+  // não de "onde ele está". Demonstra capacidade em vez de só afirmar.
+  stepsTitle: "O que o sistema faz sozinho, passo a passo",
+  systemSteps: [
+    {
+      number: "01",
+      title: "Recebe",
+      line: "Mensagem, pedido ou formulário entra por qualquer canal: WhatsApp, site ou e-mail.",
+    },
+    {
+      number: "02",
+      title: "Entende",
+      line: "Lê o que o cliente quer e classifica na hora, sem ninguém ler manualmente.",
+    },
+    {
+      number: "03",
+      title: "Organiza",
+      line: "Joga cada coisa no lugar certo: agenda, financeiro, fila de atendimento.",
+    },
+    {
+      number: "04",
+      title: "Executa",
+      line: "Confirma, agenda, cobra e responde sozinho, na hora, sem você lembrar.",
+    },
+    {
+      number: "05",
+      title: "Chama a equipe",
+      line: "Quando precisa de gente, avisa a pessoa certa com o contexto pronto.",
+    },
+  ] as SystemStep[],
   benefits: [
     { label: "Reduz tarefas repetitivas" },
     { label: "Elimina gargalos operacionais" },

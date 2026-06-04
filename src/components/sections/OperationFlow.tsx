@@ -23,6 +23,32 @@ export function OperationFlow() {
           subtitle={operationFlow.subtitle}
         />
 
+        {/* 5 PASSOS — o que o sistema faz sozinho (demonstra, não só afirma) */}
+        <div className="mx-auto mt-16 max-w-5xl">
+          <p className="reveal text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+            {operationFlow.stepsTitle}
+          </p>
+          <ol className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {operationFlow.systemSteps.map((step, i) => (
+              <li
+                key={step.number}
+                className={`${i % 2 === 0 ? "reveal" : "reveal-d1"} relative flex flex-col gap-2 rounded-xl border border-white/10 bg-white/[0.025] p-4`}
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <span className="font-display text-2xl leading-none text-accent/70">
+                  {step.number}
+                </span>
+                <p className="font-display text-[15px] uppercase tracking-wide text-white">
+                  {step.title}
+                </p>
+                <p className="text-[12.5px] leading-snug text-fg-muted">
+                  {step.line}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
         {/* SCHEMATIC FLOW */}
         <div className="mx-auto mt-20 max-w-5xl">
           <div className="relative">

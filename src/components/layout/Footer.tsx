@@ -16,7 +16,7 @@ export function Footer() {
           <Link
             href="/"
             className="group inline-flex items-center"
-            aria-label={`${site.longName} — início`}
+            aria-label={`${site.longName}, início`}
           >
             <Image
               src="/logos/logo-o-bom-sobrinho.png"

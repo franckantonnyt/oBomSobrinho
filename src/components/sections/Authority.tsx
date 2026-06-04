@@ -50,6 +50,9 @@ export function Authority() {
                 <span className="text-[11px] text-fg-dim">
                   · {s.segment}
                 </span>
+                <span className="hidden text-[11px] text-wa/80 sm:inline">
+                  → {s.result}
+                </span>
               </li>
             );
           })}
@@ -59,7 +62,7 @@ export function Authority() {
         <ul className="sr-only">
           {authority.examples.map((s) => (
             <li key={s.name}>
-              {s.name} — {s.segment}
+              {s.name}, {s.segment}: {s.result}
             </li>
           ))}
         </ul>

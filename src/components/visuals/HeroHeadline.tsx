@@ -64,7 +64,7 @@ export function HeroHeadline({
             deletionSpeed={70}
             repeat={Infinity}
             cursor={false}
-            aria-label={titleAccents.join(" — ")}
+            aria-label={titleAccents.join(" ")}
           />
           {/* Cursor always rendered so SSR/client HTML match. */}
           <motion.span

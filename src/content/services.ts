@@ -9,33 +9,33 @@ export type Service = {
 
 export const services = {
   eyebrow: "O que a gente faz",
-  title: "Sistemas que reduzem operação manual — não que adicionam complexidade.",
+  title: "Cada tarefa repetitiva da sua operação tem uma versão que roda sozinha.",
   subtitle:
-    "De cardápio digital a sistema completo, tudo desenhado pro jeito que seu negócio funciona — não pro jeito que uma ferramenta pronta exige.",
+    "De cardápio digital a sistema completo, tudo desenhado pro jeito que seu negócio funciona, não pro jeito que uma ferramenta pronta exige.",
   items: [
     {
       icon: Cog,
-      title: "Sistemas sob medida",
+      title: "Sua operação inteira num lugar só",
       outcome:
-        "Cardápio do restaurante, agenda da clínica, painel do escritório, app pro seu cliente. Cada operação pede o seu.",
+        "Cardápio, agenda, painel, app do cliente: feito pro jeito que seu negócio funciona, não pro jeito que uma ferramenta pronta exige.",
     },
     {
       icon: Workflow,
-      title: "Automação de processos",
+      title: "Tarefas que você esquece, feitas sozinhas",
       outcome:
-        "Lembrete, cobrança, relatório, atualização. Tarefas que repetem, executadas sem você precisar lembrar.",
+        "Lembrete, cobrança, relatório, confirmação. O que repete toda semana passa a acontecer sem ninguém precisar lembrar.",
     },
     {
       icon: Globe2,
-      title: "Sites & lojas online",
+      title: "Cliente entra e já cai na sua operação",
       outcome:
-        "Porta de entrada conectada à sua operação. Site, loja, página de agendamento — sempre integrados ao seu sistema.",
+        "Site, loja, página de agendamento: o que o cliente faz online entra direto no seu fluxo, sem alguém copiando à mão.",
     },
     {
       icon: Bot,
-      title: "Atendimento conectado",
+      title: "WhatsApp que atende mesmo quando você fechou",
       outcome:
-        "WhatsApp que entende, agenda, orça e cobra — sempre conectado ao sistema central da operação.",
+        "Entende, agenda, orça e cobra, e avisa a equipe quando precisa de gente. Ligado ao resto da operação, sempre.",
     },
   ] as Service[],
 };

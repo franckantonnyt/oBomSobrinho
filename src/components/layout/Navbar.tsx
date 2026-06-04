@@ -33,7 +33,7 @@ export function Navbar() {
         <Link
           href="/"
           className="flex items-center"
-          aria-label={`${site.longName} — início`}
+          aria-label={`${site.longName}, início`}
         >
           <Image
             src="/logos/logo-o-bom-sobrinho.png"

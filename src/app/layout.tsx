@@ -19,7 +19,7 @@ const bebas = Bebas_Neue({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "OBS — Sistemas com IA, Automação e Agentes de WhatsApp",
+    default: "OBS: Sistemas com IA, Automação e Agentes de WhatsApp",
     template: "%s · OBS",
   },
   description:
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: site.url,
     siteName: site.longName,
-    title: "OBS — Sistemas com IA, Automação e Agentes de WhatsApp",
+    title: "OBS: Sistemas com IA, Automação e Agentes de WhatsApp",
     description:
       "Sistemas sob medida, sites, e-commerces e agentes de IA no WhatsApp para clínicas, escritórios e pequenas empresas.",
     images: [
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "OBS — Sistemas com IA e Automação",
+        alt: "OBS: Sistemas com IA e Automação",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "OBS — Sistemas com IA, Automação e Agentes de WhatsApp",
+    title: "OBS: Sistemas com IA, Automação e Agentes de WhatsApp",
     description:
       "Sistemas sob medida e agentes de IA no WhatsApp para pequenas e médias empresas.",
     images: ["/og-image.png"],

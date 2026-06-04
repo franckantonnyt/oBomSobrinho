@@ -1,5 +1,5 @@
 export const hero = {
-  eyebrow: "Operação inteligente · sob medida",
+  eyebrow: "Sua operação no automático · sob medida pro seu negócio",
   titleLead: "Processos manuais criam gargalos.",
   // Frases que ciclam no typewriter — adicione/edite à vontade.
   titleAccents: [
@@ -8,7 +8,7 @@ export const hero = {
     "Atendimento automático vende."
   ],
   subtitle:
-    "Construímos sistemas, automações e agentes de WhatsApp que fazem o trabalho repetitivo — para você focar no que só você pode fazer.",
+    "Sua operação responde cliente, agenda, cobra e avisa a equipe sozinha. Você cuida do que importa; o trabalho repetitivo roda no automático.",
   painLead: "Algum desses te parece familiar?",
   painPoints: [
     "Responder cliente no WhatsApp manualmente, um por um",
@@ -17,7 +17,10 @@ export const hero = {
     "Financeiro que só sabe do pedido quando alguém avisa",
   ],
   primaryCta: "Falar no WhatsApp",
-  primaryCtaMicro: "Resposta em minutos · sem compromisso",
+  primaryCtaMicro: "Resposta em minutos · diagnóstico gratuito · sem pitch",
+  // Neutraliza o medo de contratar logo no herói (risco-zero honesto).
+  guarantee:
+    "Diagnóstico gratuito. Você só fecha se enxergar o ganho. Projeto fechado, sem mensalidade de plataforma.",
   primaryMessage:
     "Oi! Vim pelo site da OBS. Quero mapear o gargalo da minha operação.",
   secondaryCta: "Ver serviços",
