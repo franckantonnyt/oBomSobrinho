@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { finalCta } from "@/content/finalCta";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function FinalCTA() {
   return (
@@ -21,23 +20,20 @@ export function FinalCTA() {
             className="pointer-events-none absolute -right-24 -top-24 size-[520px] select-none object-contain opacity-[0.06] sm:-right-16 sm:size-[640px]"
           />
           <div className="relative">
-            <h2 className="reveal mx-auto max-w-3xl font-display text-4xl uppercase leading-[0.95] text-white sm:text-5xl lg:text-6xl">
+            <h2 className="reveal mx-auto max-w-3xl font-display text-4xl leading-[1.02] text-white sm:text-5xl lg:text-6xl">
               {finalCta.title}
             </h2>
 
             <div className="reveal-d1 mt-10 flex flex-col items-center gap-3">
-              <span className="wa-pulse">
-                <MagneticButton strength={0.22}>
-                  <WhatsAppButton
-                    size="xl"
-                    variant="wa"
-                    message={finalCta.message}
-                    className="px-10 py-5 text-lg"
-                  >
-                    {finalCta.cta}
-                  </WhatsAppButton>
-                </MagneticButton>
-              </span>
+              <WhatsAppButton
+                size="xl"
+                variant="premium"
+                icon={false}
+                message={finalCta.message}
+                className="px-10 py-5 text-lg"
+              >
+                {finalCta.cta}
+              </WhatsAppButton>
               <p className="text-[12.5px] text-white/70">{finalCta.ctaMicro}</p>
               <p className="mt-1 max-w-md text-[12px] text-white/55">
                 {finalCta.scarcity}

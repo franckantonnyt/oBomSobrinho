@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { site } from "@/content/site";
 
 /**
  * FAB no canto inferior — permanece FORA do <header> porque backdrop-blur no
@@ -35,14 +36,9 @@ export function MobileScrollWhatsAppFab() {
 
   return (
     <div className="pointer-events-none fixed bottom-4 right-4 z-40 md:hidden">
-      <div className="sticky-breath pointer-events-auto wa-pulse">
-        <WhatsAppButton
-          size="md"
-          variant="wa"
-          icon
-          className="shadow-[0_18px_50px_-10px_rgba(37,211,102,0.7)]"
-        >
-          WhatsApp
+      <div className="sticky-breath pointer-events-auto">
+        <WhatsAppButton size="md" variant="premium" icon>
+          {site.ctaShort}
         </WhatsAppButton>
       </div>
     </div>

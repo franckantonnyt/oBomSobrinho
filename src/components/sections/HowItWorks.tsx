@@ -64,21 +64,23 @@ export function HowItWorks() {
             <span className="size-2 rounded-full bg-accent shadow-[0_0_12px_2px_rgba(168,85,247,0.6)]" />
           </div>
 
-          <ol className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 md:grid-cols-3">
+          <ol className="grid gap-5 md:grid-cols-3">
             {howItWorks.steps.map((step, i) => (
               <li
                 key={step.number}
-                className={`${i === 0 ? "reveal" : i === 1 ? "reveal-d1" : "reveal-d2"} group relative bg-bg p-7 transition-[background,box-shadow] duration-300 hover:bg-white/[0.025] hover:shadow-[inset_0_0_30px_-12px_rgba(168,85,247,0.14)]`}
+                className={`${i === 0 ? "reveal" : i === 1 ? "reveal-d1" : "reveal-d2"} glass-card group p-7`}
               >
-                <span className="step-pop inline-block bg-gradient-to-br from-accent to-brand-400 bg-clip-text font-display text-6xl leading-none text-transparent transition-transform duration-300 group-hover:scale-105">
-                  {step.number}
-                </span>
-                <h3 className="mt-4 font-display text-2xl uppercase tracking-wide text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-fg-muted">
-                  {step.line}
-                </p>
+                <div className="relative">
+                  <span className="step-pop inline-block bg-gradient-to-br from-accent to-brand-400 bg-clip-text font-display text-6xl leading-none text-transparent transition-transform duration-300 group-hover:scale-105">
+                    {step.number}
+                  </span>
+                  <h3 className="mt-4 font-display text-2xl text-white">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-[14.5px] leading-relaxed text-fg-muted">
+                    {step.line}
+                  </p>
+                </div>
               </li>
             ))}
           </ol>

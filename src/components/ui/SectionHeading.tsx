@@ -27,7 +27,7 @@ export function SectionHeading({
           <span className="eyebrow-shimmer">{eyebrow}</span>
         </span>
       ) : null}
-      <h2 className="reveal-d1 font-display text-[1.6875rem] uppercase leading-[1.08] text-white sm:text-4xl md:text-5xl lg:text-[56px]">
+      <h2 className="reveal-d1 font-display text-[1.75rem] leading-[1.05] text-white sm:text-4xl md:text-5xl lg:text-[54px]">
         {title}
       </h2>
       {subtitle ? (

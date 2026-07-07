@@ -36,13 +36,10 @@ export function FAQ() {
 
         <ul className="mx-auto mt-14 max-w-3xl space-y-3">
           {faq.items.map((item) => (
-            <li
-              key={item.q}
-              className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.02]"
-            >
+            <li key={item.q} className="glass-card">
               <details className="group">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-white/[0.025]">
-                  <h3 className="font-display text-base uppercase tracking-wide text-white sm:text-lg">
+                  <h3 className="font-display text-base tracking-tight text-white sm:text-lg">
                     {item.q}
                   </h3>
                   <Plus

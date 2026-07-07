@@ -8,6 +8,8 @@ export const site = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://obomsobrinho.com.br",
   instagram: "https://instagram.com/obomsobrinho",
+  // Label curto do CTA premium (navbar, FAB) — a versão longa fica no Hero/FinalCTA.
+  ctaShort: "Diagnóstico gratuito",
   nav: [
     { label: "Serviços", href: "#servicos" },
     { label: "Como funciona", href: "#como-funciona" },

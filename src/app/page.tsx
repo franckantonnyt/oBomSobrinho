@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Authority } from "@/components/sections/Authority";
 import { Services } from "@/components/sections/Services";
 import { Personas } from "@/components/sections/Personas";
+import { Transformation } from "@/components/sections/Transformation";
 import { OperationFlow } from "@/components/sections/OperationFlow";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQ } from "@/components/sections/FAQ";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <Authority />
         <Services />
         <Personas />
+        <Transformation />
         <OperationFlow />
         <HowItWorks />
         <FAQ />

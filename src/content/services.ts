@@ -9,9 +9,9 @@ export type Service = {
 
 export const services = {
   eyebrow: "O que a gente faz",
-  title: "Cada tarefa repetitiva da sua operação tem uma versão que roda sozinha.",
+  title: "Sistemas que a gente desenha pro seu jeito de operar.",
   subtitle:
-    "De cardápio digital a sistema completo, tudo desenhado pro jeito que seu negócio funciona, não pro jeito que uma ferramenta pronta exige.",
+    "Cada tarefa repetitiva da sua operação ganha uma versão que roda sozinha, de cardápio digital a sistema completo, no jeito que o seu negócio funciona, não no que a ferramenta pronta exige.",
   items: [
     {
       icon: Cog,

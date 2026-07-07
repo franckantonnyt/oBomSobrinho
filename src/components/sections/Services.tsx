@@ -20,20 +20,20 @@ export function Services() {
           subtitle={services.subtitle}
         />
 
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:grid-cols-2">
+        <ul className="mt-14 grid gap-5 sm:grid-cols-2">
           {services.items.map((svc, i) => {
             const Icon = svc.icon;
             return (
               <li
                 key={svc.title}
-                className={`${i % 2 === 0 ? "reveal" : "reveal-d1"} group relative bg-bg p-7 transition-[background,box-shadow] duration-300 hover:bg-white/[0.025] hover:shadow-[inset_0_0_40px_-15px_rgba(168,85,247,0.18)]`}
+                className={`${i % 2 === 0 ? "reveal" : "reveal-d1"} glass-card group p-7`}
               >
-                <div className="flex items-start gap-4">
+                <div className="relative flex items-start gap-4">
                   <div className="grid size-11 shrink-0 place-items-center rounded-xl border border-border-strong bg-gradient-to-br from-brand/25 to-accent/10 text-white transition-[border-color,box-shadow] duration-300 group-hover:border-brand-400/60 group-hover:shadow-[0_0_14px_-4px_rgba(168,85,247,0.4)]">
                     <Icon className="icon-wobble size-5" aria-hidden />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="font-display text-xl uppercase tracking-wide text-white sm:text-[22px]">
+                    <h3 className="font-display text-xl text-white sm:text-[22px]">
                       {svc.title}
                     </h3>
                     <p className="mt-2 text-[14.5px] leading-relaxed text-fg-muted">

@@ -19,8 +19,8 @@
   --color-fg-muted: #b8b8c7;
   --color-fg-dim: #9090a8;
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Bebas Neue", "Inter", sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Manrope", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-xl: 1.25rem;
@@ -67,8 +67,11 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    letter-spacing: 0.01em;
-    line-height: 1.02;
+    font-weight: 700;
+    /* Space Grotesk em caixa mista pede tracking negativo e um respiro a mais
+       de line-height que o Bebas condensado all-caps usava. */
+    letter-spacing: -0.02em;
+    line-height: 1.06;
   }
   *:focus-visible {
     outline: 2px solid var(--color-accent);
@@ -85,12 +88,6 @@
   @media (min-width: 768px) {
     padding-inline: 2rem;
   }
-}
-
-@utility glow-ring {
-  box-shadow:
-    0 0 0 1px var(--color-border-strong),
-    0 20px 60px -20px rgba(107, 33, 232, 0.55);
 }
 
 @keyframes dash-row-in {
@@ -589,6 +586,130 @@
   animation: flow-dot-down 2.6s linear infinite;
 }
 
+/* === Hero background — directional top light + rising particles === */
+@keyframes hero-light-sway {
+  0%, 100% { transform: translateX(-54%) scale(1); opacity: .5; }
+  50%      { transform: translateX(-46%) scale(1.16); opacity: .9; }
+}
+
+.hero-light-sway {
+  animation: hero-light-sway 11s ease-in-out infinite;
+}
+
+@keyframes hero-particle-rise {
+  0%   { transform: translateY(40px); opacity: 0; }
+  18%  { opacity: .9; }
+  82%  { opacity: .9; }
+  100% { transform: translateY(-640px); opacity: 0; }
+}
+
+.hero-particle {
+  position: absolute;
+  bottom: 0;
+  border-radius: 9999px;
+  animation-name: hero-particle-rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* === Glass card — glassmorphism surface (services, transformation, steps, FAQ) === */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.45);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.glass-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), transparent);
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  border-color: rgba(168, 85, 247, 0.6);
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow:
+    0 0 0 1px rgba(168, 85, 247, 0.35),
+    0 24px 60px -20px rgba(107, 33, 232, 0.3),
+    0 0 40px -10px rgba(168, 85, 247, 0.2);
+}
+
+/* Variante em destaque (ex.: coluna "depois" do Transformation) — compound
+   selector garante especificidade maior que .glass-card sozinho. */
+.glass-card.glass-card-accent {
+  border-color: rgba(168, 85, 247, 0.4);
+  background: linear-gradient(
+    to bottom,
+    rgba(107, 33, 232, 0.14),
+    rgba(255, 255, 255, 0.04) 60%
+  );
+  box-shadow:
+    0 0 0 1px rgba(168, 85, 247, 0.25),
+    0 24px 50px -20px rgba(0, 0, 0, 0.5),
+    0 0 40px -14px rgba(168, 85, 247, 0.35);
+}
+
+.glass-card.glass-card-accent:hover {
+  border-color: rgba(168, 85, 247, 0.75);
+  box-shadow:
+    0 0 0 1px rgba(168, 85, 247, 0.45),
+    0 24px 60px -20px rgba(107, 33, 232, 0.35),
+    0 0 46px -10px rgba(168, 85, 247, 0.4);
+}
+
+/* === Premium CTA — animated gradient-border glow ===
+   Truque das duas camadas de background (padding-box + border-box) em vez de
+   ::before com z-index negativo: um pseudo-elemento com z-index:-1 pinta
+   ACIMA do próprio background do elemento (a ordem de pintura da caixa não
+   distingue z-index negativo do positivo nesse ponto), então a versão
+   anterior cobria o branco por completo em vez de deixar só o anel visível. */
+@keyframes btn-gradient-flow {
+  0%   { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 200% 50%; }
+}
+
+.btn-premium {
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(#fff, #fff),
+    linear-gradient(
+      90deg,
+      var(--color-wa),
+      var(--color-accent),
+      var(--color-brand-400),
+      var(--color-wa)
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100% 100%, 200% 100%;
+  background-position: 0 0, 0% 50%;
+  animation: btn-gradient-flow 4s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .constel-line,
   .constel-node,
@@ -607,8 +728,14 @@
   .connector-line,
   .step-pop,
   .parallax-up,
-  .parallax-down {
+  .parallax-down,
+  .hero-light-sway,
+  .hero-particle,
+  .btn-premium {
     animation: none !important;
+  }
+  .hero-particle {
+    display: none;
   }
   .event-pill-motion {
     opacity: 0.7;

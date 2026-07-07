@@ -29,10 +29,10 @@ export function Navbar() {
           : "bg-bg/60 [backdrop-filter:none] [-webkit-backdrop-filter:none]"
       )}
     >
-      <div className="container-page flex h-16 items-center justify-between">
+      <div className="container-page flex h-16 items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
         <Link
           href="/"
-          className="flex items-center"
+          className="flex items-center md:justify-self-start"
           aria-label={`${site.longName}, início`}
         >
           <Image
@@ -47,7 +47,7 @@ export function Navbar() {
 
         <nav
           aria-label="Principal"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-8 md:flex md:justify-self-center"
         >
           {site.nav.map((item) => (
             <Link
@@ -60,9 +60,9 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <WhatsAppButton size="md" variant="wa" icon>
-            Falar no WhatsApp
+        <div className="hidden md:block md:justify-self-end">
+          <WhatsAppButton size="md" variant="premium" icon={false}>
+            {site.ctaShort}
           </WhatsAppButton>
         </div>
 
@@ -90,8 +90,13 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <WhatsAppButton size="md" variant="wa" className="w-full">
-              Falar no WhatsApp
+            <WhatsAppButton
+              size="md"
+              variant="premium"
+              icon={false}
+              className="w-full"
+            >
+              {site.ctaShort}
             </WhatsAppButton>
           </div>
         </div>

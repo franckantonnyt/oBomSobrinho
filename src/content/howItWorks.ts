@@ -5,25 +5,25 @@ export type Step = {
 };
 
 export const howItWorks = {
-  eyebrow: "Como entregamos",
-  title: "Da operação atual à operação inteligente, em 3 passos.",
+  eyebrow: "Como começa",
+  title: "Do primeiro 'oi' no WhatsApp à operação rodando.",
   subtitle:
-    "Sem reunião de 2 horas pra discutir tabela. Entendemos o gargalo, desenhamos a lógica, implementamos o fluxo.",
+    "Sem reunião de 2 horas pra discutir tabela. Você chama, a gente entende o gargalo e coloca pra rodar.",
   steps: [
     {
       number: "01",
-      title: "Diagnóstico operacional",
-      line: "Mapeamos o que trava, o que repete e onde a operação perde tempo.",
+      title: "Você chama no WhatsApp",
+      line: "Sem formulário, sem pitch. Conta em uma mensagem o que mais trava na sua operação.",
     },
     {
       number: "02",
-      title: "Estruturação da solução",
-      line: "Desenhamos a lógica do sistema e como cada setor vai conectar.",
+      title: "A gente mapeia o gargalo",
+      line: "Diagnóstico gratuito: mostramos o que ainda é manual e o que dá pra rodar sozinho.",
     },
     {
       number: "03",
-      title: "Implementação",
-      line: "Sistema rodando, equipe treinada, automações ligadas, sob medida.",
+      title: "Colocamos pra rodar",
+      line: "Desenhamos o sistema no seu jeito, ligamos as automações e treinamos a equipe.",
     },
   ] as Step[],
 };

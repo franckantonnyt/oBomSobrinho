@@ -1,85 +1,63 @@
-"use client";
+import { cn } from "@/lib/cn";
 
-import { motion, useReducedMotion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
+// Static two-line headline with word-by-word blur-rise reveal (CSS-only, fires
+// on first paint, respects prefers-reduced-motion via .word-reveal).
+//
+// Gradiente roxo: precisa ficar NO MESMO elemento que a animação. A .word-reveal
+// deixa um `filter: blur(0)`/`transform` residual no span da palavra; se o
+// `bg-clip-text` estiver no PAI, esse filter no filho renderiza o texto numa
+// camada separada que o clip do pai não alcança — resultado: texto transparente
+// (só a linha branca aparecia). Aplicando o gradiente por palavra, clip e filter
+// ficam no mesmo elemento e o roxo volta a pintar.
+
+const GRADIENT =
+  "bg-gradient-to-r from-brand-400 via-accent to-brand-400 bg-clip-text text-transparent";
+
+function Words({
+  text,
+  offset = 0,
+  gradient = false,
+}: {
+  text: string;
+  offset?: number;
+  gradient?: boolean;
+}) {
+  const words = text.split(" ");
+  return (
+    <>
+      {words.map((word, i) => (
+        <span key={i}>
+          <span
+            className={cn("word-reveal inline-block", gradient && GRADIENT)}
+            style={{ animationDelay: `${offset + i * 0.08}s` }}
+          >
+            {word}
+          </span>
+          {i < words.length - 1 ? " " : ""}
+        </span>
+      ))}
+    </>
+  );
+}
 
 export function HeroHeadline({
   titleLead,
-  titleAccents,
+  titleAccent,
   className,
 }: {
   titleLead: string;
-  titleAccents: string[];
+  titleAccent: string;
   className?: string;
 }) {
-  const words = titleLead.split(" ");
-  const reduced = useReducedMotion();
-
-  // TypeAnimation expects an interleaved array: [text, pauseMs, text, pauseMs, ...]
-  const sequence = titleAccents.flatMap((phrase) => [phrase, 1800]);
-
-  // Longest phrase reserves the line height — keeps the heading from jumping
-  // between 1 and 2 lines as the typewriter deletes/retypes.
-  const longest = titleAccents.reduce(
-    (a, b) => (b.length > a.length ? b : a),
-    titleAccents[0] ?? "",
-  );
+  const leadWords = titleLead.split(" ").length;
 
   return (
     <h1 className={className}>
-      {/* Lead: word-by-word blur-rise via CSS animation (word-reveal keyframe).
-          CSS fires on first paint — no JS/hydration wait, no invisible flash.
-          animation-delay is set inline to create the stagger effect.
-          prefers-reduced-motion: .word-reveal is disabled in globals.css. */}
       <span className="block">
-        {words.map((word, i) => (
-          <span key={i}>
-            <span
-              className="word-reveal inline-block"
-              style={{ animationDelay: `${0.1 + i * 0.08}s` }}
-            >
-              {word}
-            </span>
-            {i < words.length - 1 ? " " : ""}
-          </span>
-        ))}
+        <Words text={titleLead} offset={0.1} />
       </span>
-
-      {/* Accent line — grid trick: invisible placeholder reserves max height.
-          Framer Motion fade-in with delay so TypeAnimation has time to
-          initialise before becoming visible — masks the blank-start flash. */}
-      <span className="grid">
-        <span aria-hidden className="invisible col-start-1 row-start-1">
-          {longest}
-        </span>
-        <motion.span
-          className="col-start-1 row-start-1 bg-gradient-to-r from-brand-400 via-accent to-brand-400 bg-clip-text text-transparent"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={reduced ? { duration: 0 } : { duration: 0.4, delay: 0.3 }}
-        >
-          <TypeAnimation
-            sequence={sequence}
-            speed={55}
-            deletionSpeed={70}
-            repeat={Infinity}
-            cursor={false}
-            aria-label={titleAccents.join(" ")}
-          />
-          {/* Cursor always rendered so SSR/client HTML match. */}
-          <motion.span
-            aria-hidden
-            animate={reduced ? { opacity: 0 } : { opacity: [1, 1, 0, 0] }}
-            transition={
-              reduced
-                ? { duration: 0 }
-                : { duration: 0.9, times: [0, 0.45, 0.5, 1], repeat: Infinity }
-            }
-            className="ml-[2px] inline-block select-none font-light text-accent/70"
-          >
-            |
-          </motion.span>
-        </motion.span>
+      <span className="block">
+        <Words text={titleAccent} offset={0.1 + leadWords * 0.08} gradient />
       </span>
     </h1>
   );

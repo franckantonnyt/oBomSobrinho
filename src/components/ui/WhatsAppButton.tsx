@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
-type Variant = "primary" | "outline" | "wa";
+type Variant = "primary" | "outline" | "wa" | "premium";
 type Size = "md" | "lg" | "xl";
 
 export function WhatsAppButton({
@@ -35,6 +35,10 @@ export function WhatsAppButton({
     outline:
       "border border-border-strong bg-white/5 text-fg backdrop-blur-sm hover:bg-white/10 hover:border-brand-400",
     wa: "btn-shimmer bg-wa text-[#07351a] shadow-[0_10px_40px_-10px_rgba(37,211,102,0.6)] hover:bg-wa-600 hover:-translate-y-0.5 hover:shadow-[0_16px_48px_-12px_rgba(37,211,102,0.75)]",
+    // Pill claro com borda em gradiente animado (roxo/verde) — CTA de destaque
+    // que não depende do verde do WhatsApp pra parecer premium.
+    premium:
+      "btn-premium text-[#0e0d14] shadow-[0_10px_36px_-14px_rgba(0,0,0,0.5)] hover:shadow-[0_18px_48px_-14px_rgba(168,85,247,0.45)]",
   };
 
   const sizes: Record<Size, string> = {

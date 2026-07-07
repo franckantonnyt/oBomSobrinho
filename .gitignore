@@ -25,6 +25,11 @@
 
 # Claude Code local config
 .claude/
+.mcp.json
+
+# scratch — testing artifacts and design handoff material, not site source
+.playwright-mcp/
+design-brief/
 
 # debug
 npm-debug.log*
