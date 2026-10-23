@@ -10,7 +10,7 @@ Site institucional **OBS (O Bom Sobrinho)** — agência que constrói sistemas 
 - **Framer Motion** — animações pontuais (Hero word-by-word)
 - **Scroll-driven CSS animations** (`animation-timeline: view()`) — Chrome/Edge 115+, com fallback gracioso
 - **Lucide React** — ícones
-- **next/font** — Bebas Neue (display) + Inter (body)
+- **next/font**: Space Grotesk (display) + Manrope (body) + JetBrains Mono (mono)
 - 100% **SSG** — roda como estático em qualquer CDN
 
 ## Comandos
@@ -60,6 +60,8 @@ src/
 **Ordem das seções na home** (`src/app/page.tsx`):
 Hero → Authority → Services → Personas → OperationFlow → HowItWorks → FAQ → FinalCTA.
 
+**Página do Atenda** (`src/app/atenda/page.tsx`, copy em `src/content/atenda.ts`): hero com a demo animada do atendimento (`visuals/AtendaInboxDemo`, chips de segmento), seção "você entra quando precisa" + funil (`visuals/AtendaTeamDemo`), planos, fechamento e FAQ. As telas simuladas usam peças de `visuals/AtendaScreen` e a linha do tempo de `lib/useTimeline.ts` (Framer Motion, só transform/opacidade, estado final parado com `prefers-reduced-motion`). Preços dos planos copiados de `crm/lib/billing.ts` (`PLANS`). O CTA principal leva ao cadastro do app (`atendimento.obomsobrinho.com.br/cadastro`), não ao WhatsApp. Os links do menu usam `/#ancora` para funcionar fora da home.
+
 ## Como a copy funciona
 
 **Regra-mãe**: nenhum texto vai hardcoded em JSX. Tudo vem de `src/content/*.ts`.
@@ -87,8 +89,8 @@ Tudo em `src/app/globals.css` no bloco `@theme`. Trocar a cor primária = uma li
   --color-brand:     #6b21e8;   /* roxo principal */
   --color-accent:    #a855f7;   /* destaque */
   --color-wa:        #25d366;   /* verde WhatsApp */
-  --font-display:    "Bebas Neue", ...;
-  --font-sans:       "Inter", ...;
+  --font-display:    "Space Grotesk", "Manrope", sans-serif;
+  --font-sans:       "Manrope", ui-sans-serif, ...;
 }
 ```
 
@@ -127,7 +129,7 @@ Copiar `.env.example` → `.env`:
 
 ```bash
 NEXT_PUBLIC_WHATSAPP_NUMBER=5511987654321
-NEXT_PUBLIC_CONTACT_EMAIL=contato@obomsobrinho.com.br
+NEXT_PUBLIC_CONTACT_EMAIL=obomsobrinho@gmail.com
 NEXT_PUBLIC_SITE_URL=https://obomsobrinho.com.br
 NEXT_PUBLIC_GTM_ID=                          # opcional
 ```

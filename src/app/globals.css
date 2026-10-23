@@ -14,6 +14,8 @@
   --color-accent: #a855f7;
   --color-wa: #25d366;
   --color-wa-600: #1ebe57;
+  /* Âmbar do "pedido de ajuda" nas telas simuladas do Atenda (/atenda). */
+  --color-warn: #fbbf24;
 
   --color-fg: #ffffff;
   --color-fg-muted: #b8b8c7;
