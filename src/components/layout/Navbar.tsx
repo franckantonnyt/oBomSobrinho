@@ -8,7 +8,35 @@ import { site } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
-export function Navbar() {
+/** Botão do cabeçalho com link próprio (ex.: /atenda leva ao cadastro do app). */
+type NavbarCta = { label: string; href: string };
+
+// Mesmo visual da variante "premium" do WhatsAppButton, para um link que não é WhatsApp.
+const premiumLink =
+  "btn-premium inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold tracking-wide text-[#0e0d14] shadow-[0_10px_36px_-14px_rgba(0,0,0,0.5)] transition-[transform,box-shadow] duration-200 hover:shadow-[0_18px_48px_-14px_rgba(168,85,247,0.45)] focus-visible:outline-2 focus-visible:outline-offset-4";
+
+function CtaButton({ cta, className }: { cta?: NavbarCta; className?: string }) {
+  if (cta) {
+    return (
+      <Link
+        href={cta.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(premiumLink, className)}
+      >
+        {cta.label}
+      </Link>
+    );
+  }
+  return (
+    <WhatsAppButton size="md" variant="premium" icon={false} className={className}>
+      {site.ctaShort}
+    </WhatsAppButton>
+  );
+}
+
+/** Sem `cta`, o botão do cabeçalho é o WhatsApp padrão do site. */
+export function Navbar({ cta }: { cta?: NavbarCta } = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -61,9 +89,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:block md:justify-self-end">
-          <WhatsAppButton size="md" variant="premium" icon={false}>
-            {site.ctaShort}
-          </WhatsAppButton>
+          <CtaButton cta={cta} />
         </div>
 
         <button
@@ -90,14 +116,7 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <WhatsAppButton
-              size="md"
-              variant="premium"
-              icon={false}
-              className="w-full"
-            >
-              {site.ctaShort}
-            </WhatsAppButton>
+            <CtaButton cta={cta} className="w-full" />
           </div>
         </div>
       ) : null}

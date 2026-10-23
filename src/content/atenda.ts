@@ -25,6 +25,8 @@ export type AtendaPlan = {
   seats: number;
   /** Recursos a mais deste plano (`features` de PLANS). */
   extras?: string[];
+  /** Plano de entrada: o card dele lista tudo e os outros abrem com "Tudo do Essencial, mais:". */
+  base?: boolean;
   highlight?: boolean;
 };
 
@@ -32,6 +34,8 @@ export type AtendaPlan = {
 export const atenda = {
   name: "Atenda",
   signupUrl: "https://atendimento.obomsobrinho.com.br/cadastro",
+  /** Botão do cabeçalho nesta página (no lugar do "Diagnóstico gratuito"). */
+  headerCta: "Testar grátis",
 
   meta: {
     title: "Atenda: a central inteligente do seu WhatsApp",
@@ -171,7 +175,9 @@ export const atenda = {
     seats: (n: number) => `${n} ${n === 1 ? "atendente" : "atendentes"} além do dono`,
     cta: "Testar grátis por 7 dias",
     note: "Todos os planos começam com 7 dias grátis, sem cartão.",
-    // O que todo plano tem. Só recurso que o app já faz.
+    /** Abre a lista dos planos acima do Essencial, que mostram só o que muda. */
+    inherits: "Tudo do Essencial, mais:",
+    // O que todo plano tem (listado inteiro só no Essencial). Só recurso que o app já faz.
     included: [
       "1 número de WhatsApp",
       "IA que responde só com o que você ensinou",
@@ -182,7 +188,7 @@ export const atenda = {
       "Painel com os resultados do atendimento",
     ],
     items: [
-      { name: "Essencial", priceBRL: 197, clients: 400, seats: 1, highlight: true },
+      { name: "Essencial", priceBRL: 197, clients: 400, seats: 1, base: true, highlight: true },
       {
         name: "Profissional",
         priceBRL: 347,

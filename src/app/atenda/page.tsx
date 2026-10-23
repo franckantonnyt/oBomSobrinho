@@ -42,7 +42,7 @@ export default function AtendaPage() {
   const { hero, team, plans, final, faq } = atenda;
   return (
     <>
-      <Navbar />
+      <Navbar cta={{ label: atenda.headerCta, href: atenda.signupUrl }} />
       <main id="main">
         {/* Hero + demo do atendimento (a primeira rolagem) */}
         <section className="relative isolate overflow-hidden pt-32 sm:pt-36 lg:pt-40">
@@ -116,19 +116,31 @@ export default function AtendaPage() {
                     <span className="font-display text-[40px] leading-none text-white">{brl(p.priceBRL)}</span>
                     <span className="text-[14px] text-fg-dim">{plans.perMonth}</span>
                   </p>
-                  <ul className="mt-6 grid gap-3 text-[14.5px] leading-snug text-fg-muted">
+                  {/* O Essencial lista tudo; os outros só o que muda em relação a ele. */}
+                  {!p.base && (
+                    <p className="mt-6 text-[13px] font-semibold uppercase tracking-[0.12em] text-fg-dim">
+                      {plans.inherits}
+                    </p>
+                  )}
+                  <ul
+                    className={cn(
+                      "grid gap-3 text-[14.5px] leading-snug text-fg-muted",
+                      p.base ? "mt-6" : "mt-3"
+                    )}
+                  >
                     {[plans.clients(p.clients), plans.seats(p.seats), ...(p.extras ?? [])].map((line) => (
                       <li key={line} className="flex items-start gap-2.5 font-semibold text-white">
                         <Check className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden />
                         {line}
                       </li>
                     ))}
-                    {plans.included.map((line) => (
-                      <li key={line} className="flex items-start gap-2.5">
-                        <Check className="mt-0.5 size-4 shrink-0 text-accent/70" aria-hidden />
-                        {line}
-                      </li>
-                    ))}
+                    {p.base &&
+                      plans.included.map((line) => (
+                        <li key={line} className="flex items-start gap-2.5">
+                          <Check className="mt-0.5 size-4 shrink-0 text-accent/70" aria-hidden />
+                          {line}
+                        </li>
+                      ))}
                   </ul>
                   <div className="mt-auto pt-8">
                     {p.highlight ? (
